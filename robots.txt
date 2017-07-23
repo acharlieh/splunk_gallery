@@ -1,0 +1,4 @@
+---
+---
+{% if site.url=="https://staging.splunkgallery.com" %}User-agent: *
+Disallow: /{% endif %}
