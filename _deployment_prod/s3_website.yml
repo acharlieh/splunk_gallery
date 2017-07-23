@@ -1,0 +1,13 @@
+s3_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
+s3_secret: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+s3_bucket: prod.splunkgallery.com
+s3_endpoint: us-west-2
+
+gzip: true
+
+cloudfront_distribution_id: E21P6EK1RXM0C2
+
+cloudfront_wildcard_invalidation: true
+
+concurrency_level: 5
+

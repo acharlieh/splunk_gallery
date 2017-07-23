@@ -1,0 +1,35 @@
+title: The Splunk Gallery
+description: > 
+  The community supported collection of Splunk Artifacts, Media, and Stories
+
+collections:
+  entries:
+    permalink: /:collection/:name/
+    output: true
+  people:
+    permalink: /:collection/:name/
+    output: true
+
+theme: jekyll-theme-slate
+
+defaults:
+  - scope:
+      path: ""
+      type: entries
+    values:
+      layout: item
+  - scope:
+      path: ""
+      type: people
+    values:
+      layout: person
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+
+gems:
+  - jekyll-optional-front-matter
+  - jekyll-default-layout

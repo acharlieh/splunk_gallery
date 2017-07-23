@@ -1,0 +1,68 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<h3>Links</h3>
+<ul>
+{%if page.blog %}<li><a href="{{page.blog}}" target="_blank">Personal Blog</a></li>{% endif %}
+{%if page.github %}<li><a href="https://github.com/{{page.github}}" target="_blank">{{page.github}} on Github</a></li>{% endif %}
+{%if page.slack %}<li><a href="https://splunk-usergroups.slack.com/team/{{page.slack}}" target="_blank">{{page.slack}} on splunk-usergroups Slack</a></li>{% endif %}
+{%if page.answers %}<li><a href="https://answers.splunk.com/users/{{page.answers}}/profile.html" target="_blank">Splunk Answers Profile</a></li>{% endif %}
+{%if page.in %}<li><a href="https://www.linkedin.com/in/{{page.in}}/" target="_blank">LinkedIn Profile</a></li>{% endif %}
+</ul>
+
+{% assign entries = site.entries | where: "contributors",page.slug | sort: 'title' %}
+{% assign entrycount = entries | size %}
+{% assign generalcont = site.pages | where: "url","/" | where: "contributors",page.slug | size %}
+{% unless entrycount==0 and generalcont==0 %}
+<h3>Gallery Contributions</h3>
+<ul>
+{% if generalcont>0 %}<li>General Site Support and Contributions</li>{% endif %}
+{% for item in entries %}
+    <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
+{% endfor %}
+</ul>
+{% endunless %}
+
+{% assign entries = "" | split: "," %}
+{% assign iter = site.entries | group_by_exp: "item","item.media | map: 'contributor'" | where: "name",page.slug | map:"items"  %}
+{% for arr in iter %}
+{% for entry in arr %}
+{% assign entries = entries | push: entry %}
+{% endfor %}
+{% endfor %}
+{% assign entries = entries | sort: "title" %}
+{% assign entrycount = entries | size %}
+{% unless entrycount==0 %}
+<h3>Media Contributions</h3>
+<ul>
+{% for item in entries %}
+    <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
+{% endfor %}
+</ul>
+{% endunless %}
+
+
+{% assign entries = "" | split: "," %}
+{% assign test='data-person-slug="' | append: page.slug | append: '"' %}
+{% for entry in site.entries %}
+    {% assign mentioncount = entry.content | split: 'span class="person"' | where_exp: "item","item contains test" | size %}
+    {% if mentioncount > 0 %}{% assign entries = entries | push: entry %}{% endif %}
+{% endfor %}
+{% assign entries = entries | sort: "title" %}
+{% assign entrycount = entries | size %}
+{% unless entrycount==0 %}
+<h3>Entry Mentions</h3>
+<ul>
+{% for item in entries %}
+    <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
+{% endfor %}
+</ul>
+{% endunless %}
+
+<hr/>
+<nav>
+<a href="{{ site.baseurl }}{% link index.md %}">&lt;&lt; Home</a> <a href="{{ site.baseurl }}{% link index-people.md %}">&lt; All People</a>
+</nav>

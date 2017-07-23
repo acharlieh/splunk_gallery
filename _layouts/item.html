@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+{{ content }}
+
+{% if page.media %}
+<h3>Media</h3>
+{% for item in page.media %}
+
+{% if item.url %}{% assign url=item.url %}{% else %}{% assign url=site.mediabase | append: page.id | append: '/' | append: item.image %}{% endif %}
+
+{% if item.thumburl %}{% assign thumburl=item.thumburl %}{% elsif item.thumb %}{% assign thumburl=site.mediabase | append: page.id | append: '/thumb-' | append: item.image %}{% endif %}
+
+{% assign contributor='contributed by ' | append: site.data.people[item.contributor].name %}
+
+{% if item.description %}{% assign description=item.description %}{% else %}{% assign description=item.image | append: ' ' | append: contributor %}{% endif %}
+
+<div class="item-media">
+<a href="{{url}}" target="_new">
+{% if thumburl %}
+<img src="{{thumburl}}" alt="{{description}}" title="{{contributor}}" />
+{% else %}
+{{description}}
+{% endif %}
+</a>
+</div>
+{% endfor%}
+{% endif %}
+
+{% assign keys = '' | split: ',' %}
+
+{% assign entries = page.contributors %}
+{% for key in entries %}
+    {% if key %}{% assign keys = keys | push: key %}{% endif %}
+{% endfor %}
+
+{% assign entries = page.media | map: "contributor" %}
+{% for key in entries %}
+    {% if key %}{% assign keys = keys | push: key %}{% endif %}
+{% endfor %}
+{% assign keys = keys | uniq %}
+
+{% include person_list.html keys=keys title="Contributors" class="contributors" %}
+
+<hr/>
+<nav>
+<a href="{{ site.baseurl }}{% link index.md %}">&lt;&lt; Home</a> <a href="{{ site.baseurl }}{% link index-entries.md %}">&lt; All Entries</a>
+</nav>

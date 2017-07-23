@@ -1,0 +1,20 @@
+<h3>{{include.title}}</h3>
+
+{% assign keys = include.keys | uniq %}
+
+{% assign entries = '' | split: ',' %}
+{% for key in keys %}
+    {% assign data = site.people | where: "slug",key | first %}
+    {% assign entries = entries | push: data %}
+{% endfor %}
+
+{% if include.description %}
+<p><i>{{include.description}}</i><p>
+{% endif %}
+
+{% assign entries = entries | sort: 'sort_key' %}
+<ul{% if include.class %} class="{{include.class}}" {% endif %}>
+{% for item in entries %}
+    <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
+{% endfor %}
+</ul>
