@@ -5,8 +5,8 @@ branches:
 language: ruby
 cache: bundler
 sudo: false
-rvm:
-- 2.4.0
+before_script:
+- bundle exec s3_website install
 script: 
 - bundle exec jekyll build --config _config.yml,_deployment_${TRAVIS_BRANCH}/_config.yml
 after_success: 
