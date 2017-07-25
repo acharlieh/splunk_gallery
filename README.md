@@ -6,6 +6,4 @@ Branches are built and deployed by [Travis](https://travis-ci.org/acharlieh/splu
 
 Media is hosted separately by Cloudfront.
 
-Contributing
-============
-Pull requests are welcome. Contact Charlie Huggard (teddybfez on splunk-usergroups slack) for getting media uploaded.
+[Contributions welcome!](./CONTRIBUTING.md)

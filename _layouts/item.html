@@ -5,10 +5,11 @@ layout: default
 {{ content }}
 
 {% if page.media %}
+{% assign mediabase = page.mediabase | default: site.mediabase %}
 <h3>Media</h3>
 {% for item in page.media %}
 
-{% if item.url %}{% assign url=item.url %}{% else %}{% assign url=site.mediabase | append: page.id | append: '/' | append: item.image %}{% endif %}
+{% if item.url %}{% assign url=item.url %}{% else %}{% assign url=mediabase | append: page.id | append: '/' | append: item.image %}{% endif %}
 
 {% if item.thumburl %}{% assign thumburl=item.thumburl %}{% elsif item.thumb %}{% assign thumburl=site.mediabase | append: page.id | append: '/thumb-' | append: item.image %}{% endif %}
 

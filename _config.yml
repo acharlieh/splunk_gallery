@@ -2,6 +2,8 @@ title: The Splunk Gallery
 description: > 
   The community supported collection of Splunk Artifacts, Media, and Stories
 
+mediabase: https://media.splunkgallery.com
+
 collections:
   entries:
     permalink: /:collection/:name/
