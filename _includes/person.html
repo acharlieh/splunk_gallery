@@ -1,1 +1,1 @@
-{% assign x = site.people | where: "slug",include.id | first %}<span class="person" data-person-slug="{{include.id}}">{% unless include.nolink %}<a href="{{ site.baseurl }}{{ x.url }}" target="_new">{% endunless %}{{x.title}}{% unless include.nolink %}</a>{% endunless %}</span>
+{% assign x = site.people | where: "slug",include.id | first %}<span class="person" data-person-slug="{{include.id}}">{% unless include.nolink %}<a href="{{ site.baseurl }}{{ x.url }}">{% endunless %}{{x.title}}{% unless include.nolink %}</a>{% endunless %}</span>

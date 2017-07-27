@@ -13,7 +13,11 @@ layout: default
 
 {% if item.thumburl %}{% assign thumburl=item.thumburl %}{% elsif item.thumb %}{% assign thumburl=site.mediabase | append: page.id | append: '/thumb-' | append: item.image %}{% endif %}
 
-{% assign contributor='contributed by ' | append: site.data.people[item.contributor].name %}
+{% assign contributor='' %}
+{% if item.contributor %}
+{% assign person = site.people | where: "slug",item.contributor | first %}
+{% assign contributor='contributed by ' | append: person.title %}
+{% endif %}
 
 {% if item.description %}{% assign description=item.description %}{% else %}{% assign description=item.image | append: ' ' | append: contributor %}{% endif %}
 
