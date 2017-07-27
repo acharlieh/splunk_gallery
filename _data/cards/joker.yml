@@ -1,0 +1,10 @@
+suit: 'Joker'
+cards:
+  - rank: Red
+    color: red
+    person: carasso
+    reason: A joker because he was the biggest joker that Splunk had.
+  - rank: Black
+    color: black
+    person: monzy
+    reason: The deck was his idea.

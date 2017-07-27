@@ -39,3 +39,10 @@ a.reflink {
 .contributor {
     font-weight: bold;
 }
+
+.deck {
+    dt,dd { display: inline; }
+    dt::before { content: ' '; display: block; }
+    dt.black { color: #000; }
+    dt.red { color: #a00; }
+}

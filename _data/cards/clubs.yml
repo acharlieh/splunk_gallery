@@ -1,0 +1,32 @@
+suit: '♣'
+color: black
+cards:
+  - rank: A
+    command: abstract
+  - rank: 2
+    command: top
+  - rank: 3
+    command: eval
+  - rank: 4
+    command: bin
+  - rank: 5
+    command: sort
+  - rank: 6
+    command: where
+  - rank: 7
+    command: lookup
+  - rank: 8
+    command: dedup
+  - rank: 9
+    command: autoregress
+  - rank: 10
+    command: trendline
+  - rank: J
+    person: szhang
+    reason: One of the fathers of SPL
+  - rank: Q
+    person: piebob
+    reason: Beloved Queen of the Splunk community
+  - rank: K
+    person: sorkin
+    reason: One of the fathers of SPL

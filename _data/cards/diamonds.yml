@@ -1,0 +1,31 @@
+suit: '♦'
+color: red
+cards:
+  - rank: A
+    command: replace
+  - rank: 2
+    command: transaction
+  - rank: 3
+    command: reverse
+  - rank: 4
+    command: delta
+  - rank: 5
+    command: cluster
+  - rank: 6
+    command: inputlookup
+  - rank: 7
+    command: sendemail
+  - rank: 8
+    command: stats
+  - rank: 9
+    command: correlate
+  - rank: 10
+    command: eventstats
+  - rank: J
+    person: amrit
+    reason: One of Splunk's original developers, very involved in the IRC community.
+  - rank: Q
+    person: jcervelli
+  - rank: K
+    person: godfrey
+    reason: Splunk's CEO at the time

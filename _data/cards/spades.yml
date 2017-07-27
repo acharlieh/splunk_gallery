@@ -1,0 +1,32 @@
+suit: '♠'
+color: black
+cards:
+  - rank: A
+    command: append
+  - rank: 2
+    command: iplocation
+  - rank: 3
+    command: tail
+  - rank: 4
+    command: chart
+  - rank: 5
+    command: mvexpand
+  - rank: 6
+    command: predict
+  - rank: 7
+    command: rename
+  - rank: 8
+    command: outputlookup
+  - rank: 9
+    command: history
+  - rank: 10
+    command: diff
+  - rank: J
+    person: gkanapathy
+    reason: "Started Professional Services at Splunk; most likely to tell customers: \"You're doing it wrong.\""
+  - rank: Q
+    person: erin
+    reason: Erin actually wanted this to be Vi since Vi is the most clicked [Splunk Expert](https://www.splunk.com/en_us/about-us/experts.html), been around longer, and helped so many be successful, but the design team had other ideas.
+  - rank: K
+    person: das
+    reason: Co-founder of Splunk

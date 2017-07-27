@@ -1,0 +1,32 @@
+suit: '♥'
+color: red
+cards:
+  - rank: A
+    command: addtotals
+  - rank: 2
+    command: timechart
+  - rank: 3
+    command: concurrency
+  - rank: 4
+    command: streamstats
+  - rank: 5
+    command: ctable
+  - rank: 6
+    command: regex
+  - rank: 7
+    command: table
+  - rank: 8
+    command: rex
+  - rank: 9
+    command: head
+  - rank: 10
+    command: spath
+  - rank: J
+    person: bob_deep
+    reason: The Duke of Fun... Why the Duke? Princes have actual responsibility. But Dukes get the title without any real responsibility. Therefore, Karandeep wanted to be the Duke of Fun.
+  - rank: Q
+    person: xty
+    reason: Founder of [Splunk4Good](https://www.splunk.com/en_us/about-us/splunk4good.html)
+  - rank: K
+    person: swan
+    reason: Co-founder of Splunk
