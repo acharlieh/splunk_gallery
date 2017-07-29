@@ -37,3 +37,4 @@ gems:
   - jekyll-default-layout
   - jekyll-last-modified-at
   - jekyll-optional-front-matter
+  - jekyll-sitemap

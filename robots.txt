@@ -1,4 +1,4 @@
 ---
 ---
 {% if site.url=="https://staging.splunkgallery.com" %}User-agent: *
-Disallow: /{% endif %}
+Disallow: /{%else%}Sitemap: {{ "sitemap.xml" | absolute_url }}{% endif %}
