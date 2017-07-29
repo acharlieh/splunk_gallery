@@ -26,6 +26,7 @@ cards:
     reason: One of Splunk's original developers, very involved in the IRC community.
   - rank: Q
     person: jcervelli
+    reason: Very involved with product management for the core platform... but why was he chosen to be the Queen of Diamonds? [Let us know if you know the story!](/contributing/)
   - rank: K
     person: godfrey
     reason: Splunk's CEO at the time
