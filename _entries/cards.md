@@ -18,6 +18,7 @@ The deck of Splunk playing cards was thought up by {% include person.html id="mo
 The deck was initally distributed at a .conf... believed to be 2013 (but could be off).
 
 {% capture vi %}{% include person.html id="vi" %}{% endcapture %}
+{% capture george %}{% include person.html id="gyoshinaga" %}{% endcapture%}
 
 <h3>Deck Index</h3>
 {% assign suits="joker,diamonds,clubs,hearts,spades" | split: ',' %}
@@ -25,5 +26,5 @@ The deck was initally distributed at a .conf... believed to be 2013 (but could b
 <dt class="{{card.color | default: suit.color }}">{{card.rank}} {{suit.suit}}</dt>
 {% if card.person %}<dd>{% include person.html id=card.person %}</dd>{% endif %}
 {% if card.command %}<dd><a href="https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/{{card.command}}" target="_new">{{card.command}}</a></dd>{% endif %}
-{% if card.reason %}<dd><i>{{card.reason | markdownify | remove: '<p>' | remove: '</p>' | replace_first: "Vi",vi }}</i></dd>{% endif %}
+{% if card.reason %}<dd><i>{{card.reason | markdownify | remove: '<p>' | remove: '</p>' | replace_first: "Vi",vi | replace_first: "George",george }}</i></dd>{% endif %}
 {% endfor %}</dl>{% endfor %}

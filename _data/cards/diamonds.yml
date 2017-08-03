@@ -26,6 +26,7 @@ cards:
     reason: One of Splunk's original developers, very involved in the IRC community.
   - rank: Q
     person: jcervelli
+    reason: Very involved with [product management](https://www.splunk.com/blog/2008/07/11/unnatural-acts-with-gin.html) for the core platform ... But why a Queen? Well, for a while Splunk was forced to implement a no-personal packages policy at Splunk, primarily because Johnathon's daily dose of clothing shipments begun to take up a not insignificant amount of space. Of course this policy was quickly overturned when George, the creator of said policy, needed to have some surfboards shipped to the office.
   - rank: K
     person: godfrey
     reason: Splunk's CEO at the time
