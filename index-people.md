@@ -51,6 +51,7 @@ The people listed below have (c)ontributions included in this gallery, are someh
     {% assign entries = entries | push: data %}
 {% endfor %}
 
+<div class="columns">
 {% assign entries = entries | sort: 'sort_key' %}
 <ul>
 {% for item in entries %}
@@ -60,3 +61,4 @@ The people listed below have (c)ontributions included in this gallery, are someh
     <li class="{{ class | join: ' ' }}"><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>{% if contributorkeys contains item.slug %} (c){% endif %}{% if mentionkeys contains item.slug %} (i){% endif %}</li>
 {% endfor %}
 </ul>
+</div>
