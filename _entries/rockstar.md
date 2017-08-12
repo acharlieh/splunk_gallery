@@ -23,7 +23,7 @@ media:
       thumb: true
 ---
 
-In 2007, Splunk co-sponsored the second [Sysadmin of the Year]({{ site.baseurl }}{% link _entries/101010.md %}) contest, with the theme of "Is your sysadmin a rock star?" 
+In 2007, Splunk co-sponsored the second {% include entry.html id="101010" title="Sysadmin of the Year" %} contest, with the theme of "Is your sysadmin a rock star?" 
 
 As part of the contest, {% include person.html id="pmcgovern" %} asked {% include person.html id="maverick" %} to write a song "talking about the wonders of being a sysadmin". It was recorded and provided as a metal hair band rock version (sung by {% include person.html id="ninja" %}), as an unplugged version (sung by Maverick), and without lyrics. Those entering the contest could then create or remix their own song about being a sysadmin. If anything was learned from this contest, is that sysadmins as a rule should not sing.
 

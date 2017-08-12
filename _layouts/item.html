@@ -48,6 +48,37 @@ layout: default
 
 {% include person_list.html keys=keys title="Contributors" class="contributors" %}
 
+{% if page.store %}
+<h3>Splunk Store</h3>
+<div class="columns"><ul>{% assign items=page.store | sort: 'description' %}
+{% for item in items %}
+<li>{% include store_link.html id=item.product description=item.description %}</li>
+{% endfor %}
+</ul></div>
+{% endif %}
+
+{% assign entries = "" | split: "," %}
+{% assign test='data-entry-slug="' | append: page.slug | append: '"' %}
+{% assign test2='entry.html id="' | append: page.slug | append: '"' %}
+{% for entry in site.entries %}
+    {% if entry.slug != page.slug %}
+      {% assign mentioncount1 = entry.content | split: 'span class="entry"' | where_exp: "item","item contains test" | size %}
+      {% assign mentioncount2 = entry.content | split: '{% include' | where_exp: "item","item contains test2" | size %}
+      {% assign mentioncount = mentioncount1 | plus: mentioncount2 %}
+      {% if mentioncount > 0 %}{% assign entries = entries | push: entry %}{% endif %}
+    {% endif %}
+{% endfor %}
+{% assign entries = entries | sort: "title" %}
+{% assign entrycount = entries | size %}
+{% unless entrycount==0 %}
+<h3>Related Entries</h3>
+<div class="columns"><ul>
+{% for item in entries %}
+    <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
+{% endfor %}
+</ul></div>
+{% endunless %}
+
 <hr/>
 <em>Do you have more information about this or other Splunk stories? <a href="{{ site.baseurl }}{% link CONTRIBUTING.md %}">Help us build the Splunk Gallery!</a></em>
 <hr/>

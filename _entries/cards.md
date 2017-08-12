@@ -5,9 +5,9 @@ contributors:
     - firebus
     - sideview
     - erin
+store: 
+    - product: 439953
 media:
-    - url: https://www.co-store.com/Default.aspx?Product=439953
-      description: Splunk Store Link
     - image: signed_deck.jpg
       contributor: firebus
       thumb: true

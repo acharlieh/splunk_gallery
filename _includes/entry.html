@@ -1,0 +1,1 @@
+{% assign x = site.entries | where: "slug",include.id | first %}<span class="entry" data-entry-slug="{{include.id}}">{% unless include.nolink %}<a href="{{ site.baseurl }}{{ x.url }}">{% endunless %}{{ include.title | default: x.title}}{% unless include.nolink %}</a>{% endunless %}</span>
