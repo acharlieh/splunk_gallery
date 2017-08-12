@@ -63,6 +63,10 @@ layout: default
 {% endunless %}
 
 <hr/>
+<dl class="metadates">
+<dt>Last Modified:</dt><dd>{{ page.last_modified_at | date: site.date_format }}</dd>
+</dl>
+<hr/>
 <nav>
 <a href="{{ site.baseurl }}{% link index.md %}">&lt;&lt; Home</a> <a href="{{ site.baseurl }}{% link index-people.md %}">&lt; All People</a>
 </nav>

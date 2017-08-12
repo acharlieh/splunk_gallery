@@ -16,6 +16,8 @@ theme: jekyll-theme-slate
 
 repository: acharlieh/splunk_gallery
 
+date_format: '%d %B %Y'
+
 defaults:
   - scope:
       path: ""

@@ -47,6 +47,13 @@ a.reflink {
     dt.red { color: #a00; }
 }
 
+.metadates {
+    dt { display: inline; }
+    dd { display: inline; padding-left: 2px; padding-right: 20px; }
+    font-size: 10px;
+    margin-bottom: -2px;
+}
+
 .columns {
     column-width: 15em;
 }
