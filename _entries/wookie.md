@@ -7,6 +7,7 @@ contributors:
     - firebus
 media:
     - image: flier.jpg
+      description: The Flier
       contributor: piebob
       thumb: true
 ---

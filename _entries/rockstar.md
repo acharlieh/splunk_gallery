@@ -16,16 +16,18 @@ media:
     - image: Sysadmin-Rockstar-Unplugged.mp3
       description: Sysadmin Rockstar - Unplugged (8.5 MiB)
     - image: front.jpg
+      description: Shirt Front
       contributor: maverick
       thumb: true
     - image: back.jpg
+      description: Shirt Back
       contributor: maverick
       thumb: true
 ---
 
 In 2007, Splunk co-sponsored the second {% include entry.html id="101010" title="Sysadmin of the Year" %} contest, with the theme of "Is your sysadmin a rock star?" 
 
-As part of the contest, {% include person.html id="pmcgovern" %} asked {% include person.html id="maverick" %} to write a song "talking about the wonders of being a sysadmin". It was recorded and provided as a metal hair band rock version (sung by {% include person.html id="ninja" %}), as an unplugged version (sung by Maverick), and without lyrics. Those entering the contest could then create or remix their own song about being a sysadmin. If anything was learned from this contest, is that sysadmins as a rule should not sing.
+As part of the contest, {% include person.html id="pmcgovern" %} asked {% include person.html id="maverick" %} to write a song "talking about the wonders of being a sysadmin". It was recorded and provided as a metal hair band rock version (sung by {% include person.html id="ninja" %}), as an unplugged version (sung by Maverick), and without lyrics. Those entering the contest could then create or remix their own song about being a sysadmin. If anything was learned from this contest, it is that sysadmins as a rule should not sing.
 
 The contest shirt has the rock on hand gesture as ascii art composed of binary. Reportedly, the binary reads either "Splunk" or "Splunk Sysadmins Rule All" or something to that effect.
 

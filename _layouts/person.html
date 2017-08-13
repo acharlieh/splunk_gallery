@@ -11,6 +11,8 @@ layout: default
 {%if page.slack %}<li><a href="https://splunk-usergroups.slack.com/team/{{page.slack}}" target="_blank">{{page.slack}} on splunk-usergroups Slack</a></li>{% endif %}
 {%if page.answers %}<li><a href="https://answers.splunk.com/users/{{page.answers}}/profile.html" target="_blank">Splunk Answers Profile</a></li>{% endif %}
 {%if page.in %}<li><a href="https://www.linkedin.com/in/{{page.in}}/" target="_blank">LinkedIn Profile</a></li>{% endif %}
+{%if page.twitter %}<li><a href="https://twitter.com/{{page.twitter}}/" target="_blank">Twitter Profile</a></li>{% endif %}
+
 </ul>
 
 {% assign entries = site.entries | where: "contributors",page.slug | sort: 'title' %}
@@ -62,6 +64,10 @@ layout: default
 </ul>
 {% endunless %}
 
+<hr/>
+<dl class="metadates">
+<dt>Last Modified:</dt><dd>{{ page.last_modified_at | date: site.date_format }}</dd>
+</dl>
 <hr/>
 <nav>
 <a href="{{ site.baseurl }}{% link index.md %}">&lt;&lt; Home</a> <a href="{{ site.baseurl }}{% link index-people.md %}">&lt; All People</a>

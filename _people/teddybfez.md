@@ -2,6 +2,7 @@
 title: Charlie Huggard
 sort_key: huggard charlie
 github: acharlieh
+twitter: acharlieh
 slack: teddybfez
 answers: 175762
 in: acharlieh

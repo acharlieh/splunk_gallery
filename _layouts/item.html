@@ -7,30 +7,52 @@ layout: default
 {% if page.media %}
 {% assign mediabase = page.mediabase | default: site.mediabase %}
 <h3>Media</h3>
+{% assign pics = site.empty %}
+{% assign links = site.empty %}
+
 {% for item in page.media %}
+  {% if item.thumburl or item.thumb %}
+    {% assign pics = pics | push: item %}
+  {% else %}
+    {% assign links = links | push: item %}
+  {% endif %}
+{% endfor %}
+
+{% assign linksize = links | size %}
+{% assign picsize = pics | size %}
+
+{% if linksize > 0 %}
+{% for item in links %}
+{% if item.url %}{% assign url=item.url %}{% else %}{% assign url=mediabase | append: page.id | append: '/' | append: item.image %}{% endif %}
+{% assign description=item.description | default: item.image %}
+<div class="item-link">
+<a href="{{url}}" target="_new">{{description}}</a>
+</div>
+{% endfor %}
+{% endif %}
+
+{% if picsize > 0 %}
+<div>
+{% for item in pics %}
 
 {% if item.url %}{% assign url=item.url %}{% else %}{% assign url=mediabase | append: page.id | append: '/' | append: item.image %}{% endif %}
 
 {% if item.thumburl %}{% assign thumburl=item.thumburl %}{% elsif item.thumb %}{% assign thumburl=site.mediabase | append: page.id | append: '/thumb-' | append: item.image %}{% endif %}
 
-{% assign contributor='' %}
 {% if item.contributor %}
 {% assign person = site.people | where: "slug",item.contributor | first %}
-{% assign contributor='contributed by ' | append: person.title %}
 {% endif %}
 
-{% if item.description %}{% assign description=item.description %}{% else %}{% assign description=item.image | append: ' ' | append: contributor %}{% endif %}
+{% assign description=item.description | default: item.image %}
 
 <div class="item-media">
-<a href="{{url}}" target="_new">
-{% if thumburl %}
-<img src="{{thumburl}}" alt="{{description}}" title="{{contributor}}" />
-{% else %}
-{{description}}
-{% endif %}
-</a>
+<a href="{{url}}" target="_new"><img src="{{thumburl}}" alt="" title="Enlarge"/></a>
+<div class="magnify"><a href="{{url}}" title="Enlarge"></a></div>
+<center>{{ description | markdownify }}{% if item.contributor %}<br/>Contributed by <a href="{{ site.baseurl }}{{ person.url }}">{{person.title}}</a>{% endif %}</center>
 </div>
 {% endfor%}
+</div>
+{% endif %}
 {% endif %}
 
 {% assign keys = '' | split: ',' %}
@@ -80,8 +102,14 @@ layout: default
 {% endunless %}
 
 <hr/>
+<dl class="metadates">
+<dt>Published:</dt><dd>{{ page.date | date: site.date_format }}</dd>
+<dt>Last Modified:</dt><dd>{{ page.last_modified_at | date: site.date_format }}</dd>
+</dl>
+<hr/>
 <em>Do you have more information about this or other Splunk stories? <a href="{{ site.baseurl }}{% link CONTRIBUTING.md %}">Help us build the Splunk Gallery!</a></em>
 <hr/>
 <nav>
 <a href="{{ site.baseurl }}{% link index.md %}">&lt;&lt; Home</a> <a href="{{ site.baseurl }}{% link index-entries.md %}">&lt; All Entries</a>
 </nav>
+

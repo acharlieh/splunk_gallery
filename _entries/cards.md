@@ -9,6 +9,7 @@ store:
     - product: 439953
 media:
     - image: signed_deck.jpg
+      description: Full Signed Deck
       contributor: firebus
       thumb: true
 ---
