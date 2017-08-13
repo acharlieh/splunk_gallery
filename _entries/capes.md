@@ -6,6 +6,7 @@ contributors:
     - duckfez
 media:
     - image: v2capes.jpg
+      description: A Pair of Second Version Capes
       contributor: squigley
       thumb: true
 ---

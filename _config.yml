@@ -28,6 +28,8 @@ defaults:
     values:
       layout: person
 
+empty: []
+
 exclude:
   - Gemfile
   - Gemfile.lock

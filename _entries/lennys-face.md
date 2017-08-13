@@ -6,6 +6,7 @@ contributors:
 status: community
 media:
     - image: button.jpg
+      description: Button
       contributor: firebus
       thumb: true
 ---
