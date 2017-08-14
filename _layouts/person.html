@@ -4,6 +4,7 @@ layout: default
 
 {{ content }}
 
+{% if page.blog or page.github or page.slack or page.answers or page.in or page.twitter %}
 <h3>Links</h3>
 <ul>
 {%if page.blog %}<li><a href="{{page.blog}}" target="_blank">Personal Blog</a></li>{% endif %}
@@ -12,8 +13,8 @@ layout: default
 {%if page.answers %}<li><a href="https://answers.splunk.com/users/{{page.answers}}/profile.html" target="_blank">Splunk Answers Profile</a></li>{% endif %}
 {%if page.in %}<li><a href="https://www.linkedin.com/in/{{page.in}}/" target="_blank">LinkedIn Profile</a></li>{% endif %}
 {%if page.twitter %}<li><a href="https://twitter.com/{{page.twitter}}/" target="_blank">Twitter Profile</a></li>{% endif %}
-
 </ul>
+{% endif %}
 
 {% assign entries = site.entries | where: "contributors",page.slug | sort: 'title' %}
 {% assign entrycount = entries | size %}

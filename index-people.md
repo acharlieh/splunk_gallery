@@ -6,7 +6,7 @@ permalink: /people/
 
 The people listed below have (c)ontributions included in this gallery, are somehow (i)nvolved in the shenanigans documented in this gallery, or both. Without these folks, and many others, the [Splunk Community](https://www.splunk.com/en_us/community.html) just wouldn't be quite as awesome. The page for each person at a minimum contains links to their respective gallery contributions and mentions.
 
-{% assign contributorkeys = '' | split: ',' %}
+{% assign contributorkeys = site.empty %}
 
 {% assign entries = site.pages | where: "url","/" | map: "contributors" | first %}
 {% for key in entries %}
