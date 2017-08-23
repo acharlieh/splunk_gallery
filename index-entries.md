@@ -2,6 +2,7 @@
 title: All Entries
 layout: page
 permalink: /entries/
+excerpt: All Splunk shenanigans documented so far
 ---
 
 <div class="columns">

@@ -5,19 +5,19 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <meta name="description" content="{{ site.title | default: site.github.repository_name }} : {{ site.description | default: site.github.project_tagline }}">
+    <meta name="description" content="{{ page.excerpt | strip_html | normalize_whitespace | xml_escape | default: site.description }}">
     <link href="{{ 'feed.xml' | absolute_url }}" type="application/atom+xml" rel="alternate" title="Splunk Gallery Entry Changes" />
 
     <link rel="canonical" href="https://the.splunkgallery.com{{ page.url }}" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
-    {% assign title = site.title | default: site.github.repository_name %}
+    {% assign site_title = site.title | default: site.github.repository_name %}
     {% if page.title %}
-    {% assign title = title | append: ' - ' | append: page.title %}
+    {% assign title = page.title | append: ' - ' %}
     {% endif %}
 
-    <title>{{ title }}</title>
+    <title>{{ title }}{{ site_title }}</title>
   </head>
 
   <body>

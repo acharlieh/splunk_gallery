@@ -2,6 +2,7 @@
 title: Credits
 layout: page
 permalink: /people/
+excerpt: The people listed below have contributions included in this gallery, are somehow involved in the shenanigans documented in this gallery, or both.
 ---
 
 The people listed below have (c)ontributions included in this gallery, are somehow (i)nvolved in the shenanigans documented in this gallery, or both. Without these folks, and many others, the [Splunk Community](https://www.splunk.com/en_us/community.html) just wouldn't be quite as awesome. The page for each person at a minimum contains links to their respective gallery contributions and mentions.
