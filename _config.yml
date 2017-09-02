@@ -17,6 +17,7 @@ theme: jekyll-theme-slate
 repository: acharlieh/splunk_gallery
 
 date_format: '%d %B %Y'
+timezone: America/Chicago
 
 defaults:
   - scope:
