@@ -17,6 +17,13 @@ media:
     description: Background Story on Quora by Johnvey Hwang
   - url: https://trademarks.justia.com/864/82/take-the-sh-out-of-86482383.html
     description: Trademark Information
+  - image: 2line.jpg
+    description: Original 2 Line Version
+    contributor: duckfez
+    thumb: true
+  - image: 1line.jpg
+    description: Newer 1 Line Version
+    thumb: true
 ---
 
 What is considered by many to be the classic Splunk shirt. The tagline was coined by {% include person.html id="carasso" %} and shirts were first distributed at LinuxWorld 2005. There is actually two versions of this shirt, the first where the text is on two lines, later shirts have the text is all on a single line.

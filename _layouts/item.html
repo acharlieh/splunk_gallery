@@ -48,7 +48,7 @@ layout: default
 <div class="item-media">
 <a href="{{url}}" target="_new"><img src="{{thumburl}}" alt="" title="Enlarge"/></a>
 <div class="magnify"><a href="{{url}}" title="Enlarge"></a></div>
-<center>{{ description | markdownify }}{% if item.contributor %}<br/>Contributed by <a href="{{ site.baseurl }}{{ person.url }}">{{person.title}}</a>{% endif %}</center>
+<center>{{ description | markdownify }}<br/>{% if item.contributor %}Contributed by <a href="{{ site.baseurl }}{{ person.url }}">{{person.title}}</a>{% else %}&nbsp;{% endif %}</center>
 </div>
 {% endfor%}
 </div>
