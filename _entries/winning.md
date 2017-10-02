@@ -19,7 +19,7 @@ media:
 ---
 #winning is actually a slogan that wound up on two different Splunk shirts. 
 
-In 2013, those who won Revolution Awards also received a limited run Splunk shirt.
+In 2013, those who won {% include entry.html id="revolution-awards" %} also received a limited run Splunk shirt.
 
 Unrelated to that shirt, but also around 2013, {% include person.html id="carasso" %} decided to put together a #winning shirt of his own. In addition to the slogan, this shirt features the Transaction Engines logo (a name floated around for the company/product prior to the great Splunk rebranding), as well as a bunch of rejected Splunk t-shirt slogans, from around the time that Splunk 5 was released.
 
