@@ -5,16 +5,14 @@ contributors:
 ---
 The Splunk Gallery is a community run site to collect stories and artifacts from the history of <a href="https://splunk.com">Splunk, Inc</a>. Many <a href="{{ site.baseurl }}{% link index-people.md %}">people</a> have already contributed to this repository, and we hope [to gather your stories soon]({{ site.baseurl }}{% link CONTRIBUTING.md %})!
 
-<h3>Recent News</h3>
-If you're going to be at [.conf2017](https://conf.splunk.com/), make sure to check out the "Literal Data Fabrics" talk at [2:45p on Wednesday, 27 September in the Community Theater](https://conf.splunk.com/sessions/2017-sessions.html#search=Fabric)!
-
-<h3>Recent <a href="{{ site.baseurl }}{% link index-entries.md %}">Gallery Additions</a></h3>
+<h3>Recent Gallery Additions</h3>
 <ul>
 {% assign collection = site.entries | sort: 'date' | reverse %}
-{% for item in collection limit: 5 %}
+{% for item in collection limit: 10 %}
     <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
 {% endfor %}
 </ul>
+... or <a href="{{ site.baseurl }}{% link index-entries.md %}">goto the lists of all Gallery Entries</a>
 
 {% assign contributorkeys = site.empty %}
 {% assign entries = site.pages | where: "url","/" | map: "contributors" | first %}{% for key in entries %}{% if key %}{% assign contributorkeys = contributorkeys | push: key %}{% endif %}{% endfor %}
