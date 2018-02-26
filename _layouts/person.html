@@ -8,6 +8,7 @@ layout: default
 <h3>Links</h3>
 <ul>
 {%if page.blog %}<li><a href="{{page.blog}}" target="_blank">Personal Blog</a></li>{% endif %}
+{%if page.splunkblog %}<li><a href="https://www.splunk.com/blog/author/{{page.splunkblog}}.html">On Splunk Blogs</a></li>{% endif %}
 {%if page.github %}<li><a href="https://github.com/{{page.github}}" target="_blank">{{page.github}} on Github</a></li>{% endif %}
 {%for user in page.slack %}
 {% assign display = user.display %}

@@ -1,6 +1,7 @@
 ---
 title: Amrit Bath
 sort_key: bath amrit
+splunkblog: abath
 in: amrit
 answers: 232
 ---

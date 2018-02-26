@@ -1,6 +1,7 @@
 ---
 title: Michael Wilde
 sort_key: wilde michael
+splunkblog: mwilde
 in: michaelwilde
 slack:
   - id: U04FV9CSG

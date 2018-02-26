@@ -1,6 +1,7 @@
 ---
 title: David Carasso
 sort_key: carasso david
+splunkblog: dcarasso
 in: davidcarasso
 answers: 351
 ---

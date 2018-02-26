@@ -6,4 +6,5 @@ slack:
   - display: snooplogg
   - id: U4YDY3T0W
 in: jasonhupka
+splunkblog: jhupka
 ---

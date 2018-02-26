@@ -6,4 +6,5 @@ slack:
     display: ppablo
 answers: 225716
 in: patrick-pablo-14aa2214
+splunkblog: ppablo
 --- 
