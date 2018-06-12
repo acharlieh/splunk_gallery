@@ -8,10 +8,8 @@ contributors:
 store: 
   - product: 229478
     description: Men's T-Shirt
-  - product: 229647
+  - product: SPK0240
     description: Women's T-Shirt
-  - product: 229631
-    description: Stickers
 media: 
   - url: https://www.quora.com/Why-is-Splunk-credited-with-having-great-product-marketing/answer/Johnvey-Hwang
     description: Background Story on Quora by Johnvey Hwang

@@ -4,12 +4,12 @@ date: 2017-12-24
 contributors:
     - ninja
 store:
-  - product: 229479
+  - product: SPK0144
     description: Men's T-Shirt
-  - product: 229648
+  - product: SPK0260
     description: Women's T-Shirt
-  - product: 229631
-    description: Stickers
+  - product: SPK0238
+    description: Youth T-Shirt
 media:
   - image: toobusy.jpg
     description: The Shirt

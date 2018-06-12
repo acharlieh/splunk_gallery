@@ -21,6 +21,6 @@ media:
 ---
 The Revolution Awards given out at .conf each year to folks who have done awesome things with Splunk.
 
-A very limited number of them are given out each year, across several categories, including the coveted "Splunk Ninja." What recipients recieve has varied over the years, but most years include a personalized plaque, and money to spend at the [Splunk Store](https://co-store.com/splunk).
+A very limited number of them are given out each year, across several categories, including the coveted "Splunk Ninja." What recipients recieve has varied over the years, but most years include a personalized plaque, and money to spend at the {% include store_link.html %}.
 
 In 2013, winners of the Revolution Award also got a limited edition {% include entry.html id="winning" %} shirt.
