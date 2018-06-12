@@ -1,1 +1,1 @@
-<a href="https://www.co-store.com/Default.aspx?Product={{include.id}}" target="_new" data-store-product="{{include.id}}">{{include.description | default: page.title }}</a>
+{% if include.id %}<a href="https://www.mybrandmall.com/splunk/sg/p-{{include.id}}" target="_new" data-store-product="{{include.id}}">{{include.description | default: page.title }}</a>{% else %}<a href="https://www.mybrandmall.com/splunk/" target="_new">{{include.description | default: "Splunk store" }}</a>{% endif %}
