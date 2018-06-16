@@ -10,6 +10,8 @@ store:
     description: Men's T-Shirt
   - product: SPK0240
     description: Women's T-Shirt
+  - product: SPK0034
+    description: Decals
 media: 
   - url: https://www.quora.com/Why-is-Splunk-credited-with-having-great-product-marketing/answer/Johnvey-Hwang
     description: Background Story on Quora by Johnvey Hwang

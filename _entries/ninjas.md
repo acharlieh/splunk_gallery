@@ -10,6 +10,8 @@ store:
     description: Women's T-Shirt
   - product: SPK0238
     description: Youth T-Shirt
+  - product: SPK0034
+    description: Decals
 media:
   - image: toobusy.jpg
     description: The Shirt
