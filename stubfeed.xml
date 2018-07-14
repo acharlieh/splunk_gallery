@@ -10,13 +10,13 @@
   <link href="{{ '/' | absolute_url }}" rel="alternate" type="text/html" {% if site.lang %}hreflang="{{ site.lang }}" {% endif %}/>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
   <id>{{ '/' | absolute_url | xml_escape }}</id>
-  <title type="html">{{ site.title | smartify | xml_escape }}</title>
+  <title type="html">{{ site.title | smartify | xml_escape }} - Stub Entries</title>
   <subtitle>{{ site.description | smartify | xml_escape }}</subtitle>
   <author>
     <name>Splunk Gallery Contributors</name>
     <email>info@splunkgallery.com</email>
   </author>
-{% assign postsbyupdatedate = site.entries | where_exp:"item","item.stub != true" | group_by_exp: 'item','item.last_modified_at' | sort: 'name' | reverse | map: 'items' %}{% assign posts = "" | split: ","%}{% for arrpost in postsbyupdatedate %}{% for post in arrpost%}
+{% assign postsbyupdatedate = site.entries | where_exp:"item","item.stub" | group_by_exp: 'item','item.last_modified_at' | sort: 'name' | reverse | map: 'items' %}{% assign posts = "" | split: ","%}{% for arrpost in postsbyupdatedate %}{% for post in arrpost%}
 {% assign posts = posts | push: post %}{% endfor %}{% endfor %}{% for post in posts limit: 10 %}
     <entry xml:lang="en">
       <title type="html">{{ post.title | smartify | strip_html | normalize_whitespace | xml_escape }}</title>

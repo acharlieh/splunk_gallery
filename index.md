@@ -7,7 +7,7 @@ The Splunk Gallery is a community run site to collect stories and artifacts from
 
 <h3>Recent Gallery Additions</h3>
 <ul>
-{% assign collection = site.entries | sort: 'date' | reverse %}
+{% assign collection = site.entries | where_exp:"item","item.stub != true" | sort: 'date' | reverse %}
 {% for item in collection limit: 10 %}
     <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
 {% endfor %}
