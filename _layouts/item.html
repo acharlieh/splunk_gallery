@@ -73,6 +73,17 @@ layout: default
 
 {% include person_list.html keys=keys title="Contributors" class="contributors" %}
 
+{% if page.tags.size>0 %}
+<h3>Categories</h3>
+<div class="columns"><ul>{% assign items=page.tags | sort %}
+{% for item in items %}
+{% assign page = site.category | where: "slug", item | first %}
+<li>{% if page %}<a href="{{ site.baseurl }}{{ page.url }}">{{page.title}} ({{item}})</a>{% else %}{{item}}{% endif %}
+</li>
+{% endfor %}
+</ul></div>
+{% endif %}
+
 {% if page.store %}
 <h3>Splunk Store</h3>
 <div class="columns"><ul>{% assign items=page.store | sort: 'description' %}
@@ -113,6 +124,6 @@ layout: default
 <em>Do you have more information, corrections, and/or media related to this or other Splunk stories? <a href="{{ site.baseurl }}{% link CONTRIBUTING.md %}">Help us build the Splunk Gallery!</a></em>
 <hr/>
 <nav>
-<a href="{{ site.baseurl }}{% link index.md %}">&lt;&lt; Home</a> <a href="{{ site.baseurl }}{% link index-entries.md %}">&lt; All Entries</a>
+<a href="{{ site.baseurl }}{% link index.md %}">&lt;&lt; Home</a> <a href="{{ site.baseurl }}{% link _indexes/default.md %}">&lt; All Entries</a>
 </nav>
 

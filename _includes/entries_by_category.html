@@ -1,0 +1,15 @@
+{% assign entries = "" | split: "," %}
+{% assign allentries = site.entries | where_exp:"item","item.stub != true" %}
+{% for entry in allentries %}
+    {% if entry.tags contains include.slug %}
+      {% assign entries = entries | push: entry %}
+    {% endif %}
+{% endfor %}
+{% assign entries = entries | sort: "title" %}
+{% unless entries.size==0 %}
+<div class="columns"><ul>
+{% for item in entries %}
+    <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
+{% endfor %}
+</ul></div>
+{% endunless %}
