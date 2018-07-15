@@ -22,6 +22,8 @@ media:
     contributor: mgreen
   - url: https://www.zazzle.com/splunk_ninja_community_wear_t_shirt-235833815816699298
     description: SplunkNinja.com community shirt
+tags: 
+    - tshirt
 ---
 Around 2006 {% include person.html id="ninja" %} was in a “tagline/wallpaper” mood and the [“Ask a Ninja” series](https://www.youtube.com/askaninja) was kinda popular.
 

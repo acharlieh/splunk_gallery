@@ -11,6 +11,8 @@ media:
       description: ERMAHGERD!
       contributor: aaraneta
       thumb: true
+tags: 
+    - tshirt
 ---
 Possibly one of the rarest, but most popular Splunk shirts out there. The slogan is a reference to [a popular meme](http://knowyourmeme.com/memes/ermahgerd), and was given out at the party held for awesome [Splunk Answers](https://answers.splunk.com/) and [IRC](https://wiki.splunk.com/Community:IRC) community members during .conf2012. 
 

@@ -13,6 +13,8 @@ media:
       description: Back
       contributor: jyan
       thumb: true
+tags: 
+    - tshirt
 ---
 In May 2017, these shirts were made for a team building kite flying event for a newly formed agile development team based in Splunk's Shanghai office.
 

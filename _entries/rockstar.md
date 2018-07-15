@@ -23,6 +23,8 @@ media:
       description: Shirt Back
       contributor: maverick
       thumb: true
+tags: 
+    - tshirt
 ---
 
 In 2007, Splunk co-sponsored the second {% include entry.html id="101010" title="Sysadmin of the Year" %} contest, with the theme of "Is your sysadmin a rock star?" 
