@@ -9,4 +9,4 @@ media:
       contributor: kelly
       thumb: true
 ---
-To help show support for Splunk's Women in Technology ([#SplunkWiT](https://twitter.com/search?q=%23SplunkWiT)) efforts, these pins were created and initially distributed at the Fiscal Year 2019 Sales Kickoff event.
+To help show support for Splunk's Women in Technology ([#SplunkWiT](https://twitter.com/search?q=%23SplunkWiT)) efforts, {% include person.html id="kelly" %} created these pins in January 2018 to hand out first at the Fiscal Year 2019 Sales Kickoff event.
