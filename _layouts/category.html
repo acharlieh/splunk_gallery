@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<h3>Entries</h3>
+{% include entries_by_category.html slug=page.slug %}
+
+<hr/>
+<nav>
+<a href="{{ site.baseurl }}{% link index.md %}">&lt;&lt;&lt; Home</a> <a href="{{ site.baseurl }}{% link _indexes/default.md %}">&lt;&lt; All Entries</a> <a href="{{ site.baseurl }}{% link _indexes/category.md %}">&lt; All Categories</a>
+</nav>

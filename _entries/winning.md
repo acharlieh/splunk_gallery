@@ -16,6 +16,8 @@ media:
     - image: rdc-back.jpg
       description: Rejected Splunk Slogans Back
       thumb: true
+tags: 
+    - tshirt
 ---
 #winning is actually a slogan that wound up on two different Splunk shirts. 
 

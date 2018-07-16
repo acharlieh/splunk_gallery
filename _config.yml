@@ -1,5 +1,5 @@
 title: The Splunk Gallery
-description: > 
+description: >
   The community supported collection of Splunk Artifacts, Media, and Stories
 
 mediabase: https://media.splunkgallery.com
@@ -10,6 +10,12 @@ collections:
     output: true
   people:
     permalink: /:collection/:name/
+    output: true
+  indexes:
+    permalink: /entries/by::name/
+    output: true
+  category:
+    permalink: /entries/by::collection/:name/
     output: true
 
 theme: jekyll-theme-slate
@@ -30,6 +36,16 @@ defaults:
       type: people
     values:
       layout: person
+  - scope:
+      path: ""
+      type: indexes
+    values:
+      layout: index
+  - scope:
+      path: ""
+      type: category
+    values:
+      layout: category
 
 empty: []
 

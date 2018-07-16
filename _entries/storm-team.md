@@ -12,6 +12,8 @@ media:
       description: Shirt Back
       contributor: cgales
       thumb: true
+tags: 
+    - tshirt
 ---
 
 Splunk Storm was the first cloud-based, turnkey offering of Splunk software, offered from 2011 - 2015. The team behind Storm had these shirts, designed by {% include person.html id="slin" %}.

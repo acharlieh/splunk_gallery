@@ -28,6 +28,8 @@ media:
     description: Chewing Gum Pack
     thumb: true
     contributor: mgreen
+tags: 
+    - tshirt
 ---
 
 What is considered by many to be the classic Splunk shirt. The tagline was coined by {% include person.html id="carasso" %} and shirts were first distributed at LinuxWorld 2005. There is actually two versions of this shirt, the first where the text is on two lines, later shirts have the text is all on a single line.

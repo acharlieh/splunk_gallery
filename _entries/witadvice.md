@@ -9,6 +9,8 @@ media:
     - image: mentorwall.jpg
       description: The Wall
       thumb: true
+tags: 
+    - wit
 ---
 
 Splunk has a number of employees who are engaged in empowering Women in Technology. Splunk HQ also has a strong [Do-Ocratic](https://communitywiki.org/wiki/DoOcracy) spirit when it comes to office decoration. 
