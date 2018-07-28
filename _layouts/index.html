@@ -1,10 +1,7 @@
 ---
-layout: default
+layout: page
 ---
+{% assign collection = site.indexes | where_exp: "item", "item.slug != page.slug" | sort: 'title' %} This is the list of all gallery entries indexed {{ page.title | downcase }}. You can also browse all entries {% for item in collection %}{% if forloop.last %}or {% endif %}<a href="{{ site.baseurl }}{{ item.url }}">{{ item.title | downcase }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}.
+<br/><br/>
 
 {{ content }}
-
-<hr/>
-<nav>
-<a href="{{ site.baseurl }}{% link index.md %}">&lt;&lt; Home</a> <a href="{{ site.baseurl }}{% link _indexes/default.md %}">&lt; All Entries</a>
-</nav>

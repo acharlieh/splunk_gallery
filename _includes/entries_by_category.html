@@ -1,5 +1,5 @@
 {% assign entries = "" | split: "," %}
-{% assign allentries = site.entries | where_exp:"item","item.stub != true" %}
+{% assign allentries = site.entries %}
 {% for entry in allentries %}
     {% if entry.tags contains include.slug %}
       {% assign entries = entries | push: entry %}

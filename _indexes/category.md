@@ -1,6 +1,5 @@
 ---
 title: By Category
-excerpt: Shenanigans by Category
 ---
 {% assign categories = site.empty %}
 {% assign entries = site.entries %}
@@ -21,7 +20,7 @@ excerpt: Shenanigans by Category
 
 {% endfor %}
 
-{% assign entries = site.entries | where_exp:"item","item.stub != true" | where_exp: "e","e.tags.size == 0" | sort: "title" %}
+{% assign entries = site.entries | where_exp: "e","e.tags.size == 0" | sort: "title" %}
 
 {% if entries.size>0 %}
 <h3>No Assigned Categories</h3>

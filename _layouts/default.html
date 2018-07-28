@@ -16,6 +16,9 @@
     {% if page.title %}
     {% assign title = page.title | append: ' - ' %}
     {% endif %}
+    {% if page.collection == "indexes" %}
+    {% assign title = "All Entries " | append: title %}
+    {% endif %}
 
     <title>{{ title }}{{ site_title }}</title>
   </head>
@@ -35,7 +38,11 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         {% if page.title %}
-        <h2>{{page.title}}</h2>
+            {% if page.collection == "indexes" %}
+              <h2>All Entries {{page.title}}</h2>
+            {% else %}
+              <h2>{{page.title}}</h2>
+            {% endif %}
         {% endif %}
 
         {{ content }}
