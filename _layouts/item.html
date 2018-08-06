@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% if page.tags contains 'stub' %}This page is a placeholder for a piece of swag that is known to exist, but more information is needed before we fully publish it. If you have more information, corrections, and/or media related to this story <a href="{{ site.baseurl }}{% link CONTRIBUTING.md %}">please contribute!</a>
+{% if page.tags contains 'stub' %}This page is a placeholder for a piece of swag that is known to exist, but more information is needed before we fully publish it. The URL for this entry is subject to change. If you have more information, corrections, and/or media related to this story <a href="{{ site.baseurl }}{% link CONTRIBUTING.md %}">please contribute!</a>
 <hr/>
 {% endif %}
 
@@ -77,8 +77,8 @@ layout: default
 <h3>Categories</h3>
 <div class="columns"><ul>{% assign items=page.tags | sort %}
 {% for item in items %}
-{% assign page = site.category | where: "slug", item | first %}
-<li>{% if page %}<a href="{{ site.baseurl }}{{ page.url }}">{{page.title}} ({{item}})</a>{% else %}{{item}}{% endif %}
+{% assign cat = site.category | where: "slug", item | first %}
+<li>{% if cat %}<a href="{{ site.baseurl }}{{ cat.url }}">{{cat.title}} ({{item}})</a>{% else %}{{item}}{% endif %}
 </li>
 {% endfor %}
 </ul></div>

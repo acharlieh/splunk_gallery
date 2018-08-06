@@ -17,7 +17,7 @@
     <email>info@splunkgallery.com</email>
   </author>
 {% assign postsbyupdatedate = site.entries | group_by_exp: 'item','item.last_modified_at' | sort: 'name' | reverse | map: 'items' %}{% assign posts = "" | split: ","%}{% for arrpost in postsbyupdatedate %}{% for post in arrpost%}
-{% assign posts = posts | push: post %}{% endfor %}{% endfor %}{% for post in posts limit: 10 %}
+{% assign posts = posts | push: post %}{% endfor %}{% endfor %}{% for post in posts %}
     <entry xml:lang="en">
       <title type="html">{{ post.title | smartify | strip_html | normalize_whitespace | xml_escape }}</title>
       <link href="{{ post.url | absolute_url }}" rel="alternate" type="text/html" title="{{ post.title | xml_escape }}" />

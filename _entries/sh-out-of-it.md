@@ -6,7 +6,7 @@ contributors:
     - sideview
     - halr9000
 store: 
-  - product: 229478
+  - product: SPK0145
     description: Men's T-Shirt
   - product: SPK0240
     description: Women's T-Shirt

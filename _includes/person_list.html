@@ -1,4 +1,4 @@
-<h3>{{include.title}}</h3>
+{% if include.keys.size > 0 %}<h3>{{include.title}}</h3>
 
 {% assign keys = include.keys | uniq %}
 
@@ -17,4 +17,4 @@
 {% for item in entries %}
     <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
 {% endfor %}
-</ul>
+</ul>{% endif %}
