@@ -3,7 +3,11 @@ title: Charlie Huggard
 sort_key: huggard charlie
 github: acharlieh
 twitter: acharlieh
-slack: teddybfez
+slack: 
+  - id: U04J7K6QW
+    display: teddybfez
+  - team: phantom-community
+    id: UBPRRBDL5
 answers: 175762
 in: acharlieh
 ---

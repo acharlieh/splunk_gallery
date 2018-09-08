@@ -2,7 +2,9 @@
 title: Ryan Kovar
 sort_key: kovar ryan
 twitter: meansec
-slack: ryan_k
+slack: 
+  - display: ryan_k
+    id: U0BK7MEJC
 in: ryan-kovar-9a6466a
 ---
 The BOTSfather

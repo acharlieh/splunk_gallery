@@ -1,7 +1,9 @@
 ---
 title: Russell Uman
 sort_key: uman russell
-slack: firebus
+slack: 
+  - display: firebus
+    id: U0B7KB5U7
 answers: 339298
 in: firebus
 ---
