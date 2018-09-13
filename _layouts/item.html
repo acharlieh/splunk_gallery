@@ -27,7 +27,7 @@ layout: default
 {% if linksize > 0 %}
 {% for item in links %}
 {% if item.url %}{% assign url=item.url %}{% else %}{% assign url=mediabase | append: page.id | append: '/' | append: item.image %}{% endif %}
-{% assign description=item.description | default: item.image %}
+{% assign description=item.description | default: item.image | default: url %}
 <div class="item-link">
 <a href="{{url}}" target="_new">{{description}}</a>
 </div>
@@ -46,7 +46,7 @@ layout: default
 {% assign person = site.people | where: "slug",item.contributor | first %}
 {% endif %}
 
-{% assign description=item.description | default: item.image %}
+{% assign description=item.description | default: item.image | default: url %}
 
 <div class="item-media">
 <a href="{{url}}" target="_new"><img src="{{thumburl}}" alt="" title="Enlarge"/></a>
