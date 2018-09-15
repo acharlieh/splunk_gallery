@@ -11,5 +11,8 @@ contributors:
 tags:
     - tshirt
 ---
+[General availability for version 3.0](http://investors.splunk.com/news-releases/news-release-details/splunk-customers-achieve-accelerated-operational-visibility) of the [Splunk App For VMware](https://splunkbase.splunk.com/app/725/) was a big deal.
 
-This slogan was coined by {% include person.html id="irina" %}, around 6 Aug 2013 and was printed and originally handed out at the VMWorld 2013 conference, after [announcing general availability for version 3.0](http://investors.splunk.com/news-releases/news-release-details/splunk-customers-achieve-accelerated-operational-visibility) of the [Splunk App For VMware](https://splunkbase.splunk.com/app/725/).
+This slogan, and "Bringing ESXi back," both referring to the current version of VMWare's Hypervisor were coined by {% include person.html id="irina" %}, and approved by {% include person.html id="ssommer" %} on 6 Aug 2013. Ultimately this slogan won out, and was printed for their debut at the VMWorld 2013 conference.
+
+While this shirt was widely distributed, another slogan, {% include entry.html id="esx" %}, was also approved and printed, but in much smaller quantities.
