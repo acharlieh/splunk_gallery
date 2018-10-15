@@ -6,6 +6,10 @@ media:
       description: Shirt Front
       thumb: true
       contributor: firebus
+    - image: back.jpg
+      description: Shirt Back
+      thumb: true
+      contributor: firebus
 tags:
     - stub
     - tshirt
