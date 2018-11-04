@@ -6,10 +6,10 @@ contributors:
 The Splunk Gallery is a community run site to collect stories and artifacts from the history of <a href="https://splunk.com">Splunk, Inc</a>. Many <a href="{{ site.baseurl }}{% link index-people.md %}">people</a> have already contributed to this repository, and we hope [to gather your stories soon]({{ site.baseurl }}{% link CONTRIBUTING.md %})!
 
 <h3>Check out these most recent Splunk Gallery additions</h3>
+{% assign collection = site.entries | group_by_exp: 'i', 'i.date | append: i.last_modified_at | append: i.title | append: i.slug' | sort: 'name' | reverse | map: 'items' %}
 <ul>
-{% assign collection = site.entries | sort: 'date' | reverse %}
 {% for item in collection limit: 10 %}
-    <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
+    <li><a href="{{ site.baseurl }}{{ item.first.url }}">{{ item.first.title }}</a></li>
 {% endfor %}
 </ul>
 ... or browse all gallery entries {% assign collection = site.indexes | sort: 'title' %}{% for item in collection %}{% if forloop.last %}or {% endif %}<a href="{{ site.baseurl }}{{ item.url }}"> {{ item.title | downcase }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}!
