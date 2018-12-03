@@ -4,6 +4,8 @@ date: 2018-03-18
 contributors:
     - irina
 media:
+  - url: https://www.splunk.com/blog/2018/10/01/announcing-our-2018-splunk-revolution-award-winners.html
+    description: 2018 Revolution Award Winners Blog
   - url: https://www.splunk.com/blog/2017/09/25/congratulations-to-the-2017-splunk-revolution-award-winners.html
     description: 2017 Revolution Award Winners Blog
   - url: https://www.splunk.com/blog/2016/10/28/meet-the-2016-splunk-revolution-award-winners.html
@@ -17,6 +19,8 @@ media:
   - image: 2015.jpg
     description: 2015 Plaque
     thumb: true
+  - url: https://www.linkedin.com/feed/update/urn:li:activity:6467513452083679232/
+    description: 2018 Plaque and Swag
 
 ---
 The Revolution Awards given out at .conf each year to folks who have done awesome things with Splunk.
