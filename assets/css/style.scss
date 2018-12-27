@@ -48,11 +48,15 @@ a.reflink {
 }
 
 .character {
-    font-style: italic;
+    font-variant: small-caps;
 }
 
 .contributor {
     font-weight: bold;
+}
+
+.depicted {
+    font-style: italic;
 }
 
 .deck {

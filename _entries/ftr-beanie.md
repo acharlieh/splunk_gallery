@@ -6,13 +6,16 @@ media:
       description: Pin
       thumb: true
     - image: doug.jpg
-      description: Doug Merritt
+      depicting: doug
       thumb: true
     - image: ppablo.jpg
-      description: Patrick Pablo
+      depicting: ppablo
       thumb: true
     - image: firebus.jpg
-      description: Russell Uman
+      depicting: 
+        - firebus
+        - piebob
+        - halr9000
       thumb: true
 tags:
     - stub

@@ -46,19 +46,34 @@ layout: default
 {% assign person = site.people | where: "slug",item.contributor | first %}
 {% endif %}
 
-{% assign description=item.description | default: item.image | default: url %}
+{% if item.depicting %}
+  {% assign description=item.description | default: "" %}
+  {% assign depicting = site.empty %}
+  {% if item.depicting.first %}
+    {% for d in item.depicting %}
+      {% assign p = site.people | where: "slug",d | first %}
+      {% assign depicting = depicting | push: p %}
+    {% endfor %}
+  {% else %}
+    {% assign p = site.people | where: "slug",item.depicting | first %}
+    {% assign depicting = depicting | push: p %}
+  {% endif %}
+{% else %}
+  {% assign description=item.description | default: item.image | default: url %}
+  {% assign depicting = item.depicting %}
+{% endif %}
 
 <div class="item-media">
 <a href="{{url}}" target="_new"><img src="{{thumburl}}" alt="" title="Enlarge"/></a>
 <div class="magnify"><a href="{{url}}" title="Enlarge"></a></div>
-<center>{{ description | markdownify }}<br/>{% if item.contributor %}Contributed by <a href="{{ site.baseurl }}{{ person.url }}">{{person.title}}</a>{% else %}&nbsp;{% endif %}</center>
+<center>{{ description | markdownify }}{% if depicting %}Featuring: {% for d in depicting %}{% unless forloop.first %}{% if forloop.last %} &{% else %},{% endif %} {% endunless %}<a href="{{ site.baseurl }}{{ d.url }}">{{d.title}}</a>{% endfor %}{% endif %}<br/>{% if item.contributor %}Contributed by <a href="{{ site.baseurl }}{{ person.url }}">{{person.title}}</a>{% else %}&nbsp;{% endif %}</center>
 </div>
 {% endfor%}
 </div>
 {% endif %}
 {% endif %}
 
-{% assign keys = '' | split: ',' %}
+{% assign keys = site.empty %}
 
 {% assign entries = page.contributors %}
 {% for key in entries %}
@@ -93,7 +108,7 @@ layout: default
 </ul></div>
 {% endif %}
 
-{% assign entries = "" | split: "," %}
+{% assign entries = site.empty %}
 {% assign test='data-entry-slug="' | append: page.slug | append: '"' %}
 {% assign test2='entry.html id="' | append: page.slug | append: '"' %}
 {% for entry in site.entries %}

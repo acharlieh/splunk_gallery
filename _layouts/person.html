@@ -39,7 +39,7 @@ layout: default
 </ul>
 {% endunless %}
 
-{% assign entries = "" | split: "," %}
+{% assign entries = site.empty %}
 {% assign iter = site.entries | group_by_exp: "item","item.media | map: 'contributor'" | where: "name",page.slug | map:"items"  %}
 {% for arr in iter %}
 {% for entry in arr %}
@@ -58,7 +58,7 @@ layout: default
 {% endunless %}
 
 
-{% assign entries = "" | split: "," %}
+{% assign entries = site.empty %}
 {% assign test='data-person-slug="' | append: page.slug | append: '"' %}
 {% for entry in site.entries %}
     {% assign mentioncount = entry.content | split: 'span class="person"' | where_exp: "item","item contains test" | size %}
@@ -68,6 +68,30 @@ layout: default
 {% assign entrycount = entries | size %}
 {% unless entrycount==0 %}
 <h3>Entry Mentions</h3>
+<ul>
+{% for item in entries %}
+    <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
+{% endfor %}
+</ul>
+{% endunless %}
+
+{% assign entries = site.empty %}
+{% for entry in site.entries %}
+    {% assign mentioncount = 0 %}
+    {% for media in entry.media %}
+      {% if media.depicting contains page.slug %}
+        {% assign mentioncount = 1 %}
+      {% elsif media.depicting == page.slug %}
+        {% assign mentioncount = 1 %}
+      {% endif %}
+    {% endfor %}
+    {% if mentioncount > 0 %}{% assign entries = entries | push: entry %}{% endif %}
+{% endfor %}
+
+{% assign entries = entries | sort: "title" %}
+{% assign entrycount = entries | size %}
+{% unless entrycount==0 %}
+<h3>Entry Media Depictions</h3>
 <ul>
 {% for item in entries %}
     <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
