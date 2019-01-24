@@ -28,8 +28,27 @@ layout: default
 {% for item in links %}
 {% if item.url %}{% assign url=item.url %}{% else %}{% assign url=mediabase | append: page.id | append: '/' | append: item.image %}{% endif %}
 {% assign description=item.description | default: item.image | default: url %}
+
+{% if item.depicting %}
+  {% assign description=item.description | default: "" %}
+  {% assign depicting = site.empty %}
+  {% if item.depicting.first %}
+    {% for d in item.depicting %}
+      {% assign p = site.people | where: "slug",d | first %}
+      {% assign depicting = depicting | push: p %}
+    {% endfor %}
+  {% else %}
+    {% assign p = site.people | where: "slug",item.depicting | first %}
+    {% assign depicting = depicting | push: p %}
+  {% endif %}
+{% else %}
+  {% assign description=item.description | default: item.image | default: url %}
+  {% assign depicting = item.depicting %}
+{% endif %}
+
+
 <div class="item-link">
-<a href="{{url}}" target="_new">{{description}}</a>
+<a href="{{url}}" target="_new">{{description}}</a> {% if depicting %}Featuring: {% for d in depicting %}{% unless forloop.first %}{% if forloop.last %} &{% else %},{% endif %} {% endunless %}<a href="{{ site.baseurl }}{{ d.url }}">{{d.title}}</a>{% endfor %}{% endif %}
 </div>
 {% endfor %}
 {% endif %}
