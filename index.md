@@ -12,7 +12,7 @@ The Splunk Gallery is a community run site to collect stories and artifacts from
     <li><a href="{{ site.baseurl }}{{ item.first.url }}">{{ item.first.title }}</a></li>
 {% endfor %}
 </ul>
-... or browse all gallery entries {% assign collection = site.indexes | sort: 'title' %}{% for item in collection %}{% if forloop.last %}or {% endif %}<a href="{{ site.baseurl }}{{ item.url }}"> {{ item.title | downcase }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}!
+... or browse all gallery entries {% include entry_indexes.html %}!
 
 {% assign contributorkeys = site.empty %}
 {% assign entries = site.pages | where: "url","/" | map: "contributors" | first %}{% for key in entries %}{% if key %}{% assign contributorkeys = contributorkeys | push: key %}{% endif %}{% endfor %}

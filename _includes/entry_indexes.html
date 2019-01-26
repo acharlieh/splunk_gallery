@@ -1,0 +1,1 @@
+{% assign collection = site.indexes | sort: 'title' | where_exp: "item", "item.url != page.url" | where_exp: 'i','i.unlisted != true' %}{% for item in collection %}{% if forloop.last %}or {% endif %}<a href="{{ site.baseurl }}{{ item.url }}"> {{ item.title | downcase }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}

@@ -75,6 +75,6 @@ layout: default
 <em>Do you have more information, corrections, and/or media related to this or other Splunk stories? <a href="{{ site.baseurl }}{% link CONTRIBUTING.md %}">Help us build the Splunk Gallery!</a></em>
 <hr/>
 <nav>
-<a href="{{ site.baseurl }}{% link index.md %}">&lt;&lt; Home</a> &lt; All Entries ({% assign collection = site.indexes | sort: 'title' %}{% for item in collection %}{% if forloop.last %}or {% endif %}<a href="{{ site.baseurl }}{{ item.url }}"> {{ item.title | downcase }}</a>{% unless forloop.last %},{% endunless %} {% endfor %})
+<a href="{{ site.baseurl }}{% link index.md %}">&lt;&lt; Home</a> &lt; All Entries ({% include entry_indexes.html %})
 </nav>
 
