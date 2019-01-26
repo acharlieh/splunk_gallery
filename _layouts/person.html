@@ -46,6 +46,12 @@ layout: default
 {% assign entries = entries | push: entry %}
 {% endfor %}
 {% endfor %}
+{% assign iter = site.people | group_by_exp: "item","item.media | map: 'contributor'" | where: "name",page.slug | map:"items"  %}
+{% for arr in iter %}
+{% for entry in arr %}
+{% assign entries = entries | push: entry %}
+{% endfor %}
+{% endfor %}
 {% assign entries = entries | sort: "title" %}
 {% assign entrycount = entries | size %}
 {% unless entrycount==0 %}
@@ -98,6 +104,8 @@ layout: default
 {% endfor %}
 </ul>
 {% endunless %}
+
+{% include media.html %}
 
 <hr/>
 <dl class="metadates">

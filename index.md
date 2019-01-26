@@ -18,8 +18,9 @@ The Splunk Gallery is a community run site to collect stories and artifacts from
 {% assign entries = site.pages | where: "url","/" | map: "contributors" | first %}{% for key in entries %}{% if key %}{% assign contributorkeys = contributorkeys | push: key %}{% endif %}{% endfor %}
 {% assign entries = site.entries | map: "contributors" %}{% for entryset in entries %}{% for key in entryset %}{% if key %}{% assign contributorkeys = contributorkeys | push: key %}{% endif %}{% endfor %}{% endfor %}
 {% assign entries = site.entries | map: "media" | map: "contributor" %}{% for key in entries %}{% if key %}{% assign contributorkeys = contributorkeys | push: key %}{% endif %}{% endfor %}
+{% assign entries = site.people | map: "media" | map: "contributor" %}{% for key in entries %}{% if key %}{% assign contributorkeys = contributorkeys | push: key %}{% endif %}{% endfor %}
 {% assign contributorkeys = contributorkeys | uniq %}
-{% assign mentionkeys="" | split: "," %}
+{% assign mentionkeys= site.empty %}
 {% assign entries=site.entries | map: "content" %}{% for entry in entries %}{% assign data = entry | split: 'span class="person"' | where_exp: "item","item contains 'data-person-slug='" %}{% for mention in data %}{% assign split = mention | split: '"' %}{% assign mentionkeys = mentionkeys | push: split[1] %}{% endfor %}{% endfor %}
 {% assign mentionkeys = mentionkeys | uniq %}
 {% assign allkeys=mentionkeys %}{% for key in contributorkeys %}{% assign allkeys = allkeys | push: key %}{% endfor %}{% assign allkeys=allkeys | uniq %}

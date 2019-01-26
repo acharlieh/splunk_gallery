@@ -26,6 +26,11 @@ The people listed below have <span class="contributor">(c)ontributions</span> in
     {% if key %}{% assign contributorkeys = contributorkeys | push: key %}{% endif %}
 {% endfor %}
 
+{% assign entries = site.people | map: "media" | map: "contributor" %}
+{% for key in entries %}
+    {% if key %}{% assign contributorkeys = contributorkeys | push: key %}{% endif %}
+{% endfor %}
+
 {% assign contributorkeys = contributorkeys | uniq %}
 
 {% assign mentionkeys= site.empty %}
