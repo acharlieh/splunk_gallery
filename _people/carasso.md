@@ -11,5 +11,9 @@ media:
       contributor: firebus
       depicting: carasso
       thumb: true
+    - image: jetski.jpg
+      contributor: baboonbones
+      description: One of the last pictures
+      thumb: true
 ---
 GNU {{page.title}}. {% include entry.html id="chief-mind" title="Splunk's Chief Mind" %} is missed by all.
