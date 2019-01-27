@@ -5,11 +5,11 @@ media:
     - image: front.jpg
       description: Shirt Front
       thumb: true
-      contributor: firebus
+      depicting: firebus
     - image: back.jpg
       description: Shirt Back
       thumb: true
-      contributor: firebus
+      depicting: firebus
 tags:
     - stub
     - tshirt

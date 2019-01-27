@@ -5,6 +5,7 @@ media:
     - image: front.jpg
       description: Shirt front
       thumb: true
+      depicting: roconnor
 tags:
     - stub
     - tshirt

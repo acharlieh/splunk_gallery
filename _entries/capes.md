@@ -9,6 +9,9 @@ media:
       description: A Pair of Second Version Capes
       contributor: squigley
       thumb: true
+      depicting: 
+        - treinke
+        - teddybfez
     - image: card.jpg
       description: The cape card
       contributor: duckfez
@@ -16,6 +19,10 @@ media:
     - image: threecapes.jpg
       description: 'Left to Right: V2, V1, & APAC'
       thumb: true
+      depicting: 
+        - mmorales
+        - teddybfez
+        - trustedsubject
 ---
 If you go to [.conf](https://conf.splunk.com/), you may see a number of folks running around in capes with the slogan "Splunk> Here to Save the Day". These are the original Splunk Capes... produced by {% include person.html id="piebob" %} to award and recognize awesome members of the IRC and Answers [community](https://community.splunk.com) long before the Splunk Trust was created.
 

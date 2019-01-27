@@ -5,11 +5,11 @@ media:
     - image: neongreen.jpg
       description: Neon Green
       thumb: true
-      contributor: jason
+      depicting: jason
     - image: green.jpg
       description: Green
       thumb: true
-      contributor: jason
+      depicting: jason
 tags:
     - stub
     - tshirt

@@ -6,6 +6,7 @@ media:
       description: Shirt front
       thumb: true
       contributor: jason
+      depicting: jason
 tags:
     - stub
     - tshirt

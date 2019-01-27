@@ -6,6 +6,7 @@ media:
     - image: front.jpg
       description: Shirt Front
       thumb: true
+      depicting: teddybfez
 contributors: 
     - irina
 tags:

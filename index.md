@@ -15,15 +15,24 @@ The Splunk Gallery is a community run site to collect stories and artifacts from
 ... or browse all gallery entries {% include entry_indexes.html %}!
 
 {% assign contributorkeys = site.empty %}
-{% assign entries = site.pages | where: "url","/" | map: "contributors" | first %}{% for key in entries %}{% if key %}{% assign contributorkeys = contributorkeys | push: key %}{% endif %}{% endfor %}
-{% assign entries = site.entries | map: "contributors" %}{% for entryset in entries %}{% for key in entryset %}{% if key %}{% assign contributorkeys = contributorkeys | push: key %}{% endif %}{% endfor %}{% endfor %}
-{% assign entries = site.entries | map: "media" | map: "contributor" %}{% for key in entries %}{% if key %}{% assign contributorkeys = contributorkeys | push: key %}{% endif %}{% endfor %}
-{% assign entries = site.people | map: "media" | map: "contributor" %}{% for key in entries %}{% if key %}{% assign contributorkeys = contributorkeys | push: key %}{% endif %}{% endfor %}
-{% assign contributorkeys = contributorkeys | uniq %}
+{% assign entries = site.pages | where: "url","/" | map: "contributors" | first | where_exp: "i","i" %}
+{% assign contributorkeys = contributorkeys | concat: entries %}
+{% assign entries = site.collections | map: "docs" | map: "contributors" | where_exp: "i","i"  %}
+{% for entryset in entries %}{% assign contributorkeys = contributorkeys | concat: entryset %}{% endfor %}
+{% assign entries = site.collections | map: "docs" | map: "media" | map: "contributor" | where_exp: "i","i"  %}
+{% assign contributorkeys = contributorkeys | concat: entries %}
+{% assign contributorkeys = contributorkeys | where_exp: "i","i" | uniq %}
+
 {% assign mentionkeys= site.empty %}
 {% assign entries=site.entries | map: "content" %}{% for entry in entries %}{% assign data = entry | split: 'span class="person"' | where_exp: "item","item contains 'data-person-slug='" %}{% for mention in data %}{% assign split = mention | split: '"' %}{% assign mentionkeys = mentionkeys | push: split[1] %}{% endfor %}{% endfor %}
 {% assign mentionkeys = mentionkeys | uniq %}
-{% assign allkeys=mentionkeys %}{% for key in contributorkeys %}{% assign allkeys = allkeys | push: key %}{% endfor %}{% assign allkeys=allkeys | uniq %}
+
+{% assign depictedkeys = site.empty %}
+{% assign entries = site.entries | map: "media" | map: "depicting" %}{% for key in entries %}{% if key.first %}{% assign depictedkeys = depictedkeys | concat: key %}{% elsif key %}{% assign depictedkeys = depictedkeys | push: key %}{% endif %}{% endfor %}
+{% assign depictedkeys = depictedkeys | uniq %}
+
+{% assign allkeys=mentionkeys | concat: contributorkeys | concat: depictedkeys | uniq %}
+
 {% assign updatedate = site.entries | group_by_exp: 'item','item.last_modified_at' | sort: "name" | map: "name" | last %}{% assign testdate = site.people | group_by_exp: 'item','item.last_modified_at' | sort: "name" | map: "name" | last %}{% if updatedate < testdate %}{% assign updatedate = testdate %}{% endif %}{% assign testdate = site.pages | where_exp: 'item','item.name!="sitemap.xml"' | group_by_exp: 'item','item.last_modified_at' | sort: "name" | map: "name" | last %}{% if updatedate < testdate %}{% assign updatedate = testdate %}{% endif %}
 <hr/>
 <dl class="metadates">

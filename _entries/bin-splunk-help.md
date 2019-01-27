@@ -5,7 +5,7 @@ media:
     - image: front.jpg
       description: Shirt Front
       thumb: true
-      contributor: cerby
+      depicting: cerby
 tags:
     - stub
     - tshirt

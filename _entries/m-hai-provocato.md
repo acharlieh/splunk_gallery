@@ -5,8 +5,10 @@ media:
     - image: front.jpg
       description: Shirt Front
       thumb: true
-      contributor: jason
+      depicting: jason
 tags:
     - stub
     - tshirt
+contributors: 
+    - jason
 ---
