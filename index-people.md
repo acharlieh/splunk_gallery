@@ -8,29 +8,12 @@ excerpt: The people listed below have contributions included in this gallery, ar
 The people listed below have <span class="contributor">(c)ontributions</span> included in this gallery, are somehow <span class="character">(i)nvolved</span> in the shenanigans documented in this gallery, are <span class="depicted">(d)epicted</span> in the gallery media, or some combination of the above. Without these folks, and many others, the [Splunk Community](https://www.splunk.com/en_us/community.html) just wouldn't be quite as awesome. The page for each person at a minimum contains links to their respective gallery contributions and mentions.
 
 {% assign contributorkeys = site.empty %}
-
 {% assign entries = site.pages | where: "url","/" | map: "contributors" | first %}
-{% for key in entries %}
-    {% if key %}{% assign contributorkeys = contributorkeys | push: key %}{% endif %}
-{% endfor %}
-
-{% assign entries = site.entries | map: "contributors" %}
-{% for entryset in entries %}
-    {% for key in entryset %}
-        {% if key %}{% assign contributorkeys = contributorkeys | push: key %}{% endif %}
-    {% endfor %}
-{% endfor %}
-
-{% assign entries = site.entries | map: "media" | map: "contributor" %}
-{% for key in entries %}
-    {% if key %}{% assign contributorkeys = contributorkeys | push: key %}{% endif %}
-{% endfor %}
-
-{% assign entries = site.people | map: "media" | map: "contributor" %}
-{% for key in entries %}
-    {% if key %}{% assign contributorkeys = contributorkeys | push: key %}{% endif %}
-{% endfor %}
-
+{% assign contributorkeys = contributorkeys | concat: entries %}
+{% assign entries = site.collections | map: "docs" | map: "contributors" | where_exp: "i","i"  %}
+{% for entryset in entries %}{% assign contributorkeys = contributorkeys | concat: entryset %}{% endfor %}
+{% assign entries = site.collections | map: "docs" | map: "media" | map: "contributor"  | where_exp: "i","i"  %}
+{% assign contributorkeys = contributorkeys | concat: entries %}
 {% assign contributorkeys = contributorkeys | uniq %}
 
 {% assign mentionkeys= site.empty %}
@@ -44,22 +27,18 @@ The people listed below have <span class="contributor">(c)ontributions</span> in
 {% endfor %}
 {% assign mentionkeys = mentionkeys | uniq %}
 
-
 {% assign depictedkeys = site.empty %}
 {% assign entries = site.entries | map: "media" | map: "depicting" %}
 {% for key in entries %}
   {% if key.first %}
-    {% for k in key %}{% assign depictedkeys = depictedkeys | push: k %}{% endfor %}
+    {% assign depictedkeys = depictedkeys | concat: key %}
   {% elsif key %}
     {% assign depictedkeys = depictedkeys | push: key %}
   {% endif %}
 {% endfor %}
 {% assign depictedkeys = depictedkeys | uniq %}
 
-{% assign allkeys=mentionkeys %}
-{% for key in contributorkeys %}{% assign allkeys = allkeys | push: key %}{% endfor %}
-{% for key in depictedkeys %}{% assign allkeys = allkeys | push: key %}{% endfor %}
-{% assign allkeys=allkeys | uniq %}
+{% assign allkeys=mentionkeys | concat: contributorkeys | concat: depictedkeys | uniq %}
 
 {% assign entries = site.empty %}
 {% for key in allkeys %}

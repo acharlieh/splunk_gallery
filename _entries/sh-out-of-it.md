@@ -1,5 +1,5 @@
 ---
-title: 'Take the SH out of IT'
+title: 'Take the sh out of IT'
 date: 2017-08-11
 contributors:
     - ninja
@@ -33,3 +33,5 @@ tags:
 ---
 
 What is considered by many to be the classic Splunk shirt. The tagline was coined by {% include person.html id="carasso" %} and shirts were first distributed at LinuxWorld 2005. There is actually two versions of this shirt, the first where the text is on two lines, later shirts have the text is all on a single line.
+
+Since `sh` (or `/bin/sh`) is the command to run a shell in \*NIX environments, one intrepretation of this slogan is that Splunk is empowering System administrators, by giving a platform that eliminates the need to shell into hundreds (thousands) of machines just to get visibility into their environment (or to provide that visibility to their end users)... the second insinuation is of course without those useful logs in Splunk, IT operations may involve a lot more 💩 than necessary.

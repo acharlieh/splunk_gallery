@@ -5,12 +5,12 @@ contributors:
     - thard
 media: 
     - image: front.jpg
-      contributor: thard
+      depicting: thard
       description: Shirt Front
       thumb: true
     - image: back.jpg
       description: Shirt Back
-      contributor: thard
+      depicting: thard
       thumb: true
 tags: 
     - tshirt

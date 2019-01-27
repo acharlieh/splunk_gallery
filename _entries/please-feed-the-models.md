@@ -5,7 +5,9 @@ media:
     - image: kelly.jpg
       description: Shirt Front
       thumb: true
-      contributor: kelly
+      depicting: 
+        - kelly
+        - teddybfez
 tags:
     - stub
     - tshirt

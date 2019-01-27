@@ -5,7 +5,7 @@ media:
     - image: front.jpg
       description: Shirt Front
       thumb: true
-      contributor: alacer
+      depicting: alacer
 tags:
     - stub
     - tshirt

@@ -6,6 +6,7 @@ contributors:
 media:
     - url: https://youtu.be/PvgQ8QY2aYc?t=46
       description: Brief Clip in .conf2012 Recap Video
+      depicting: jcervelli
 ---
 
 At .conf2012 {% include person.html id="jcervelli" %} smashed a macbook during the keynote, to demonstrate indexer clustering which was introduced with Splunk 5.0.
