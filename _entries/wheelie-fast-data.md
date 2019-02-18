@@ -10,7 +10,10 @@ media:
     - url: https://youtu.be/FAJkuKrfR2k
       description: Partnership Announcement Video
       depicting: doug
-
+    - image: front.jpg
+      description: Shirt Front
+      thumb: true
+      contributor: chockin
 tags:
     - tshirt
 ---
