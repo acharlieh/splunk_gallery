@@ -8,6 +8,7 @@ media:
     - image: doug.jpg
       depicting: doug
       thumb: true
+      contributor: martin
     - image: ppablo.jpg
       depicting: ppablo
       thumb: true

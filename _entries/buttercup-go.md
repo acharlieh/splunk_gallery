@@ -7,6 +7,10 @@ media:
     - image: sticker.jpg
       description: Sticker
       thumb: true
+    - image: pin.jpg
+      description: Sticker
+      thumb: true
+      contributor: martin
 store:
   - product: SPK0402
     description: Flying Buttercup Sticker
