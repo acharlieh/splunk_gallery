@@ -17,7 +17,9 @@
 
 {% if linksize > 0 %}
 {% for item in links %}
-{% if item.url %}{% assign url=item.url %}{% else %}{% assign url=mediabase | append: page.id | append: '/' | append: item.image %}{% endif %}
+{% assign itemslug = item.pageid | default: page.id %}
+
+{% if item.url %}{% assign url=item.url %}{% else %}{% assign url=mediabase | append: itemslug | append: '/' | append: item.image %}{% endif %}
 {% assign description=item.description | default: item.image | default: url %}
 
 {% if item.depicting %}
@@ -47,10 +49,13 @@
 {% if picsize > 0 %}
 <div>
 {% for item in pics %}
+{% assign itemslug = item.pageid | default: page.id %}
+{% assign thumbslug = item.thumbpageid | default: itemslug %}
+{% assign thumbimage = item.thumbimage | default: item.image %}
 
-{% if item.url %}{% assign url=item.url %}{% else %}{% assign url=mediabase | append: page.id | append: '/' | append: item.image %}{% endif %}
+{% if item.url %}{% assign url=item.url %}{% else %}{% assign url=mediabase | append: itemslug | append: '/' | append: item.image %}{% endif %}
 
-{% if item.thumburl %}{% assign thumburl=item.thumburl %}{% elsif item.thumb %}{% assign thumburl=site.mediabase | append: page.id | append: '/thumb-' | append: item.image %}{% endif %}
+{% if item.thumburl %}{% assign thumburl=item.thumburl %}{% elsif item.thumb %}{% assign thumburl=mediabase | append: thumbslug | append: '/thumb-' | append: thumbimage %}{% endif %}
 
 {% if item.contributor %}
 {% assign person = site.people | where: "slug",item.contributor | first %}
